@@ -527,13 +527,13 @@ def some(seq):
     return False
     
 def check_rules(values):
-    print(values)
+    #print(values)
     rule_b9 = values["B9"] + values["B8"] + values["C1"] + values["H4"] + values["H4"] == 23
     rule_a5 = values["A5"] + values["A5"] + values["D7"] + values["I5"] + values["G8"] + values["B3"] == 19
     rule_i2 = values["I2"] + values["I3"] + values["F2"] + values["E9"] == 15
     rule_i7 = values["I7"] + values["H8"] + values["C2"] + values["D9"] == 26
     rule_i6 = values["I6"] + values["A5"] + values["I3"] + values["B8"] + values["C3"] == 20
-    rule_i7d9 = values["I7"] + ["D9"] + values["B6"] + values["A8"] +  values["A3"] + values["C4"] == 27
+    rule_i7d9 = values["I7"] + values["D9"] + values["B6"] + values["A8"] +  values["A3"] + values["C4"] == 27
     rule_c7 = values["C7"] + ["H9"] + values["I7"] + values["B2"] + values["H8"] + values["G3"] == 31
     rule_d3 = values["D3"] + values["I8"] + values["A4"] + values["I6"] == 27
     rule_f5 = values["F5"] + ["B8"] + values["F8"] + values["I7"] + values["F1"]  == 33
