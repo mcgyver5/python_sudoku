@@ -527,6 +527,7 @@ def some(seq):
     return False
     
 def check_rules(values):
+    print(values)
     rule_b9 = values["B9"] + values["B8"] + values["C1"] + values["H4"] + values["H4"] == 23
     rule_a5 = values["A5"] + values["A5"] + values["D7"] + values["I5"] + values["G8"] + values["B3"] == 19
     rule_i2 = values["I2"] + values["I3"] + values["F2"] + values["E9"] == 15
