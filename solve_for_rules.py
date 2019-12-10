@@ -534,11 +534,11 @@ def check_rules(values):
     rule_i7 = values["I7"] + values["H8"] + values["C2"] + values["D9"] == 26
     rule_i6 = values["I6"] + values["A5"] + values["I3"] + values["B8"] + values["C3"] == 20
     rule_i7d9 = values["I7"] + values["D9"] + values["B6"] + values["A8"] +  values["A3"] + values["C4"] == 27
-    rule_c7 = values["C7"] + ["H9"] + values["I7"] + values["B2"] + values["H8"] + values["G3"] == 31
+    rule_c7 = values["C7"] + values["H9"] + values["I7"] + values["B2"] + values["H8"] + values["G3"] == 31
     rule_d3 = values["D3"] + values["I8"] + values["A4"] + values["I6"] == 27
-    rule_f5 = values["F5"] + ["B8"] + values["F8"] + values["I7"] + values["F1"]  == 33
-    rule_a2 = values["A2"] + ["A8"] + values["D7"] + values["E4"] == 21
-    rule_c1 = values["C1"] + values["I4"] + ["C2"] + values["I1"] + values["A4"] == 20
+    rule_f5 = values["F5"] + values["B8"] + values["F8"] + values["I7"] + values["F1"]  == 33
+    rule_a2 = values["A2"] + values["A8"] + values["D7"] + values["E4"] == 21
+    rule_c1 = values["C1"] + values["I4"] + values["C2"] + values["I1"] + values["A4"] == 20
     rule_f8 = values["F8"] + values["C1"] + values["F6"] + values["D3"] + values["B6"] == 25
     if rule_b9 and rule_a5 and rule_i2 and rule_a7 and rule_i6 and rule_i7d9 and rule_c7 and rule_d3 and rule_f5 and rule_a2 and rule_c1 and rule_f8:
         return True
