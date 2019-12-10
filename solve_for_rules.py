@@ -557,6 +557,7 @@ for x in range(1,10):
     xchar = str(x)
     grid_special = xchar + grid18m1
     solved = solve(grid_special)
+    print(solved)
     if check_rules(solved):
         print("FALSE")
     else:
