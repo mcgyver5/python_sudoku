@@ -525,7 +525,25 @@ def some(seq):
     for e in seq:
         if e: return e
     return False
-    
+
+def output_outer(values):
+	answer = ""
+	for x in range(1,10):
+		vindex = "A" + str(x)
+		answer = answer + values[vindex]
+	
+	for y in range(66,74):
+		vindex = chr(y) + '9'
+		answer = answer + values[vindex]
+	
+	for z in range(8,0,-1):
+		vindex = "I" + str(z)
+		answer = answer + values[vindex]
+		
+	for zz in range(72,65,-1):
+		vindex = chr(zz) + "1"
+		answer = answer + values[vindex]
+	print("AOTW{" + answer + "}")
 def check_rules(values):
     #print(values)
     rule_b9 = values["B9"] + values["B8"] + values["C1"] + values["H4"] + values["H4"] == 23
@@ -551,18 +569,34 @@ grid88= '00002000101200000000000020000000000202000000500000000000000012010000200
 grid3 = '00000001012000000060000200000000002020000000000000000000000120100002060200100900'
 grid19= '000000001012000000000000200000000002020000000000000000000000120100002000200100000'
 grid18= '000000001012000000000000200000000002020000000000000000000000120100002000000100000'
+
+gridm1to4 = '000'
+gridm6on = '0001012000000000000200000000002020000000000000000000000120100002000000100000'
 grid18m1 = '00000001012000000000000200000000002020000000000000000000000120100002000000100000'
 grid_special = ""
+count = 0
 for x in range(1,10):
-    xchar = str(x)
-    grid_special = xchar + grid18m1
-    solved = solve(grid_special)
-    if solved:
-        if check_rules(solved):
-            print("FALSE")
-        else:
-            print("TRUE")
-        display(solved)
+	for y in range(2,5):
+		xchar = str(x)
+		grid_special = xchar + gridm1to4 + str(y) + gridm6on
+		try:
+			solved = solve(grid_special)
+			if solved:
+				if check_rules(solved):
+					print("FALSE")
+				else:
+					count = count+1
+					
+					#display(solved)
+					output_outer(solved)
+		except ValueError:
+			print("")
+print("Count : {}".format(count))
+
+grid18mA5 = '000020001012000000000000200000000002020000000000000000000000120100002000000100000'
+#display(parse_grid(grid18mA5))
+display(parse_grid(grid18))
+#display(solve(grid18))
 
 #display(solve(grid18))
 
