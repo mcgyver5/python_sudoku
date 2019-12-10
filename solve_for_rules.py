@@ -159,18 +159,7 @@ def apply_I6(values):
                         eliminate(values,grid_string,str(xy))
         return values
 
-def check_rules(values):
-    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_a5 = values["B9"] + ["B8"] + ["C1"] + ["H4"] + ["H4"] == 19
-    rule_i7 = values["I7"] + ["H8"] + ["C2"] + ["D9"] == 26
-    rule_i6 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 
-    rule_i7d9 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_c7 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_d3 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+
 
 def apply_I2(values):
 #I2 + I3 + F2 + E9 = 15
@@ -537,7 +526,21 @@ def some(seq):
         if e: return e
     return False
     
+def check_rules(values):
+    rule_b9 = values["B9"] + ["B8"] + ["C1"] + ["H4"] + ["H4"] == 23
+    rule_a5 = values["A5"] + values["A5"] + ["D7"] + ["I5"] + ["G8"] + ["B3"] == 19
+    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_i7 = values["I7"] + ["H8"] + ["C2"] + ["D9"] == 26
+    rule_i6 = values["I6"] + values["A5"] + ["I3"] + ["B8"] + ["C3"] == 20
+    rule_i7d9 = values["I7"] + ["D9"] + ["B6"] + ["A8"] +  ["A3"] + ["C4"] == 27
+    rule_c7 = values["C7"] + ["H9"] + ["I7"] +["B2"] + ["H8"] + ["G3"] == 31
+    rule_d3 = values["D3"] + values["I8"] + ["A4"] + ["I6"] == 27
+    rule_f5 = values["F5"] + ["B8"] + ["F8"] + ["I7"] + ["F1"]  == 33
+    rule_a2 = values["A2"] + ["A8"] + ["D7"] + ["E4"] == 21
+    rule_c1 = values["C1"] + values["I4"] + ["C2"] + ["I1"] + ["A4"] == 20
+    rule_f8 = values["F8"] + values["C1"] + ["F6"] + ["D3"] + ["B6"] == 25
     
+
     #    A        B        C        D        E        F        G        H        I                '
 grid88= '000020001012000000000000200000000002020000005000000000000000120100002000200170000'
 grid3 = '00000001012000000060000200000000002020000000000000000000000120100002060200100900'
