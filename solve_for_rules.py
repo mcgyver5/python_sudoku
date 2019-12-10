@@ -159,7 +159,19 @@ def apply_I6(values):
                         eliminate(values,grid_string,str(xy))
         return values
 
-  
+def check_rules(values):
+    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_a5 = values["B9"] + ["B8"] + ["C1"] + ["H4"] + ["H4"] == 19
+    rule_i7 = values["I7"] + ["H8"] + ["C2"] + ["D9"] == 26
+    rule_i6 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 
+    rule_i7d9 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_c7 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_d3 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
+
 def apply_I2(values):
 #I2 + I3 + F2 + E9 = 15
         rule = "I2 + I3 + F2 + E9"
@@ -536,6 +548,7 @@ for x in range(1,10):
     xchar = str(x)
     grid_special = xchar + grid18m1
     solved = solve(grid18)
+    check_rules(solved)
 
 display(solve(grid18))
 
