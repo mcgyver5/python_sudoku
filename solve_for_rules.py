@@ -527,18 +527,22 @@ def some(seq):
     return False
     
 def check_rules(values):
-    rule_b9 = values["B9"] + ["B8"] + ["C1"] + ["H4"] + ["H4"] == 23
-    rule_a5 = values["A5"] + values["A5"] + ["D7"] + ["I5"] + ["G8"] + ["B3"] == 19
-    rule_i2 = values["I2"] + ["I3"] + ["F2"] + ["E9"] == 15
-    rule_i7 = values["I7"] + ["H8"] + ["C2"] + ["D9"] == 26
-    rule_i6 = values["I6"] + values["A5"] + ["I3"] + ["B8"] + ["C3"] == 20
-    rule_i7d9 = values["I7"] + ["D9"] + ["B6"] + ["A8"] +  ["A3"] + ["C4"] == 27
-    rule_c7 = values["C7"] + ["H9"] + ["I7"] +["B2"] + ["H8"] + ["G3"] == 31
-    rule_d3 = values["D3"] + values["I8"] + ["A4"] + ["I6"] == 27
-    rule_f5 = values["F5"] + ["B8"] + ["F8"] + ["I7"] + ["F1"]  == 33
-    rule_a2 = values["A2"] + ["A8"] + ["D7"] + ["E4"] == 21
-    rule_c1 = values["C1"] + values["I4"] + ["C2"] + ["I1"] + ["A4"] == 20
-    rule_f8 = values["F8"] + values["C1"] + ["F6"] + ["D3"] + ["B6"] == 25
+    rule_b9 = values["B9"] + values["B8"] + values["C1"] + values["H4"] + values["H4"] == 23
+    rule_a5 = values["A5"] + values["A5"] + values["D7"] + values["I5"] + values["G8"] + values["B3"] == 19
+    rule_i2 = values["I2"] + values["I3"] + values["F2"] + values["E9"] == 15
+    rule_i7 = values["I7"] + values["H8"] + values["C2"] + values["D9"] == 26
+    rule_i6 = values["I6"] + values["A5"] + values["I3"] + values["B8"] + values["C3"] == 20
+    rule_i7d9 = values["I7"] + ["D9"] + values["B6"] + values["A8"] +  values["A3"] + values["C4"] == 27
+    rule_c7 = values["C7"] + ["H9"] + values["I7"] + values["B2"] + values["H8"] + values["G3"] == 31
+    rule_d3 = values["D3"] + values["I8"] + values["A4"] + values["I6"] == 27
+    rule_f5 = values["F5"] + ["B8"] + values["F8"] + values["I7"] + values["F1"]  == 33
+    rule_a2 = values["A2"] + ["A8"] + values["D7"] + values["E4"] == 21
+    rule_c1 = values["C1"] + values["I4"] + ["C2"] + values["I1"] + values["A4"] == 20
+    rule_f8 = values["F8"] + values["C1"] + values["F6"] + values["D3"] + values["B6"] == 25
+    if rule_b9 and rule_a5 and rule_i2 and rule_a7 and rule_i6 and rule_i7d9 and rule_c7 and rule_d3 and rule_f5 and rule_a2 and rule_c1 and rule_f8:
+        return True
+    else: 
+        return False
     
 
     #    A        B        C        D        E        F        G        H        I                '
@@ -546,12 +550,16 @@ grid88= '00002000101200000000000020000000000202000000500000000000000012010000200
 grid3 = '00000001012000000060000200000000002020000000000000000000000120100002060200100900'
 grid19= '000000001012000000000000200000000002020000000000000000000000120100002000200100000'
 grid18= '000000001012000000000000200000000002020000000000000000000000120100002000000100000'
-
+grid_special = ""
 for x in range(1,10):
     xchar = str(x)
     grid_special = xchar + grid18m1
-    solved = solve(grid18)
-    check_rules(solved)
+    solved = solve(grid_special)
+    if check_rules(solved):
+        print("FALSE")
+    else:
+        print("TRUE")
+        display(solved)
 
-display(solve(grid18))
+#display(solve(grid18))
 
